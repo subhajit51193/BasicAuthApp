@@ -32,10 +32,12 @@ Route::controller(ProductController::class)->group(function() {
 // Protected routes of product and logout
 Route::middleware('auth:sanctum')->group( function () {
     Route::post('/logout', [LoginRegisterController::class, 'logout']);
+    Route::get('/dashboard', [LoginRegisterController::class, 'dashboard']);
 
     Route::controller(ProductController::class)->group(function() {
         Route::post('/products', 'store');
         Route::post('/products/{id}', 'update');
         Route::delete('/products/{id}', 'destroy');
+        
     });
 });

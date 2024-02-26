@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use Auth;
 use Illuminate\Http\Request;
 use Validator;
 
@@ -168,4 +169,6 @@ class ProductController extends Controller
 
         return response()->json($response, 200);
     }
+
+    
 }

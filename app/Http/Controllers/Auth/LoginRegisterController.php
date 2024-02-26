@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
+use Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -107,5 +108,9 @@ class LoginRegisterController extends Controller
             'status' => 'success',
             'message' => 'User is logged out successfully'
             ], 200);
+    }
+    public function dashBoard()
+    {
+        return 'Welcome ' . auth()->user()->name;
     }    
 }
